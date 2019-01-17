@@ -1,0 +1,31 @@
+logging:
+  level: INFO
+  appenders:
+    - type: file
+      currentLogFilename: /var/log/ordermonitor/ordermonitor.log
+      threshold: ALL
+      archive: true
+      archivedLogFilenamePattern: /var/log/ordermonitor/ordermonitor-%d.log.gz
+      archivedFileCount: 7
+      timeZone: UTC
+  loggers:
+    com.objectedge: DEBUG
+
+database:
+  ordermonitor:
+    driverClass: com.mysql.jdbc.Driver
+    user: root
+    password: ordermonitor
+    url: jdbc:mysql://localhost:3306/ordermonitor
+
+customers:
+  beer:
+    occ_base_url: https://ccstore-test-zbta.oracleoutsourcing.com
+    login: "*****"
+    password: "*****"
+    site_id: siteUS
+    site_base_url: https://ccstore-test-zbta.oracleoutsourcing.com
+    notification_email: igor.nascimento@objectedge.com
+    tolerance: 0
+  hope:
+  grandcru:
