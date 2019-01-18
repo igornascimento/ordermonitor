@@ -1,35 +1,37 @@
 package com.objectedge;
 
+import com.objectedge.base.Customer;
 import io.dropwizard.Configuration;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import org.hibernate.validator.constraints.*;
+
 import java.util.List;
 
 public class orderMonitorConfiguration extends Configuration {
 
-    @NotEmpty
-    private String database;
+//    @NotEmpty
+//    private String database;
 
     @NotEmpty
-    private List<String> customers;
+    private List<Customer> customers;
+
+//    @JsonProperty
+//    public String getDatabase() {
+//        return this.database;
+//    }
+//
+//    @JsonProperty
+//    public void setDatabase(String database) {
+//        this.database = database;
+//    }
 
     @JsonProperty
-    public String getDatabase() {
-        return this.database;
-    }
-
-    @JsonProperty
-    public void setDatabase(String database) {
-        this.database = database;
-    }
-
-    @JsonProperty
-    public List<String> getCustomers() {
+    public List<Customer> getCustomers() {
         return this.customers;
     }
 
     @JsonProperty
-    public void setCustomers(List<String> customers) {
+    public void setCustomers(List<Customer> customers) {
         this.customers = customers;
     }
 

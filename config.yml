@@ -11,15 +11,24 @@ logging:
   loggers:
     com.objectedge: DEBUG
 
-database:
-  ordermonitor:
-    driverClass: com.mysql.jdbc.Driver
-    user: root
-    password: ordermonitor
-    url: jdbc:mysql://localhost:3306/ordermonitor
+server:
+  applicationConnectors:
+    - type: http
+      port: 8080
+#    - type: https
+#      port: 8443
+#      keyStorePath: example.keystore
+#      keyStorePassword: example
+
+#database:
+#  ordermonitor:
+#    driverClass: com.mysql.jdbc.Driver
+#    user: root
+#    password: ordermonitor
+#    url: jdbc:mysql://localhost:3306/ordermonitor
 
 customers:
-  beer:
+  - code: beer
     occ_base_url: https://ccstore-test-zbta.oracleoutsourcing.com
     login: "*****"
     password: "*****"
@@ -27,5 +36,5 @@ customers:
     site_base_url: https://ccstore-test-zbta.oracleoutsourcing.com
     notification_email: igor.nascimento@objectedge.com
     tolerance: 0
-  hope:
-  grandcru:
+  - code: hope
+  - code: grandcru
